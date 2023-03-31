@@ -4,6 +4,10 @@ meta:
   description: Console and Arcade video game emulator for macOS
   url: https://openemu-org.netlify.app
   author: Craig Erskine
+social:
+  - title: Twitter
+    ico: mdi:twitter
+    url: https://twitter.com/openemu
 analytics: |-
   // google analytics
   window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;

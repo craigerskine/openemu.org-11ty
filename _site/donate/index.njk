@@ -13,18 +13,27 @@ eleventyComputed:
   {% call ui.heading() %}
     {{ title }}
   {% endcall %}
-  <ul class="grid-(& cols-1) gap-12 md:(grid-cols-2) lg:(grid-cols-4)">
+  <ul class="grid-(& cols-1) gap-12 md:(grid-cols-2)">
     {% for item in collections.vendors %}
-      <li>
-        {% if item.data.url %}
-          <a href="{{ item.data.url }}">
-            {% endif %}
-            <iconify-icon icon="{{ item.data.ico }}" width="1em" height="1em" inline="false" class="iconify text-5xl md:(text-8xl)"></iconify-icon>
-            <h2>{{ item.data.title }}</h2>
-            {{ item.content | safe }}
-            {% if item.data.url %}
-          </a>
-        {% endif %}
+      <li class="relative flex-(& col) items-start">
+        <div class="w-full flex gap-5">
+          <{%- if item.data.url %}a href="{{ item.data.url }}"{% else %}div{% endif %} class="btn-{{ item.data.color }} w-14 h-14 text-({{ item.data.color }}-300 3xl) flex-none hover:(text-white)">
+            <iconify-icon icon="{{ item.data.ico }}" width="1em" height="1em" inline="false" class="iconify mauto"></iconify-icon>
+          </{%- if item.data.url %}a{% else %}div{% endif %}>
+          <div class="min-w-0 flex-1">
+            <strong class="text-(gray-300 lg)">{{ item.data.title }}</strong>
+            <div class="pt-1 text-sm leading-normal">{{ item.content | safe }}</div>
+            <div class="pt-2 text-xl flex-(& wrap) items-center">
+              {%- if item.data.url %}
+                <a href="{{ item.data.url }}" class="flex items-center gap-1">
+                  <iconify-icon icon="mdi:link-variant" width="1em" height="1em" inline="false" class="iconify opacity-70"></iconify-icon>
+                </a>
+              {%- else %}
+                <iconify-icon icon="mdi:link-variant-off" width="1em" height="1em" inline="false" class="iconify opacity-30"></iconify-icon>
+              {%- endif %}
+            </div>
+          </div>
+        </div>
       </li>
     {% endfor %}
   </ul>

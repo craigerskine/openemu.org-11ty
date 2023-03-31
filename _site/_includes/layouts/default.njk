@@ -99,7 +99,9 @@
             </li>
             <li>{{ footerNavHeading(title='Social') }}
               <ul class="lg:(space-y-3)">
-                {{ footerNav(title='Twitter',url='https://twitter.com/openemu') }}
+                {%- for item in site.social %}
+                  {{ footerNav(title=item.title,url=item.url) }}
+                {%- endfor %}
               </ul>
             </li>
           </ul>
