@@ -1,0 +1,116 @@
+{%- import "components/ui.njk" as ui -%}
+
+<!doctype html>
+<html lang="en" class="bg-gray-900" x-data="{% renderblock 'data' -%}" x-cloak>
+
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>{%- if title -%}{{ title }} - {{ site.meta.title }}{%- else -%}{{ site.meta.title }}{%- endif -%}</title>
+    <meta name="description" content="{{ site.meta.description }}" />
+    <meta name="author" content="{{ site.meta.author }}" />
+    <meta name="generator" content="{{ eleventy.generator }}" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta property="og:title" content="{{ site.meta.title }}" />
+    <meta property="og:description" content="{{ site.meta.description }}" />
+    <meta property="og:url" content="{{ site.meta.url }}{{ page.url }}" />
+    <meta property="og:image" content="{{ site.meta.url }}/og-image.png" />
+    <meta property="og:image:width" content="152" />
+    <meta property="og:image:height" content="152" />
+    <meta name="theme-color" content="#111111" />
+
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="author" type="text/plain" href="/humans.txt" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" />
+
+    {% renderblock 'css' %}
+
+  </head>
+
+  <body class="bg-gray-900 text-gray-400 text-sm overflow-y-scroll overflow-x-hidden" style="background-image: url('/_assets/img/grunge.png'); display: none;" data-instant-intensity="mousedown">
+    <div class="app min-h-screen flex-(& col) bg-no-repeat bg-top" style="background-image: url('/_assets/img/retro-grid.jpg');">
+
+      <header class="mb-32">
+        <div class="mx-auto px-4 max-w-screen-xl relative">
+          <nav class="w-full font-bold text-lg" aria-label="Main navigation">
+            <ul class="pb-16 flex flex-wrap items-center justify-center lg:(pb-0 h-48 justify-between)">
+              <li class="logo w-full text-center lg:(w-auto flex-1 order-3)"><a href="/" class="inline-block transform motion-safe:(transition) hover:(-translate-y-[3px])"><img src="/_assets/img/logo.png" alt="{{ site.meta.title }}" /></a></li>
+              {%- macro nav(title='',url='#',current=false) %}
+                <a href="{{ url }}" class="{% if current %}text-red-500{% else %}text-red-700{% endif %} motion-safe:(transition) hover:(text-white)"{% if current %} aria-current="page"{% endif %}>
+                  {{ title }}
+                </a>
+              {%- endmacro %}
+              {%- for item in collections.all | eleventyNavigation %}
+                <li class="mx-2 lg:(mx-{% if item.order == 2 or item.order == 4 %}24{% else %}0{% endif %} order-{{ item.order }})">
+                  {# <a href="{{ item.url }}" class="text-red-500 motion-safe:(transition) hover:(text-white)"{% if page.url == '/' and item.url == '/' %} aria-current="page" {% elseif item.url == page.url and item.url in page.url %} aria-current="page"{% endif %}>
+                    {{ item.key }}
+                  </a> #}
+                  {%- if item.url == '/' %}
+                    {% set current %}{% if item.url == '/' and page.url == '/' %}true{% endif %}{% endset %}
+                    {{ nav(title=item.key,url=item.url,current=current) }}
+                  {%- else %}
+                    {% set current %}{% if item.url in page.url %}true{% endif %}{% endset %}
+                    {{ nav(title=item.key,url=item.url,current=current) }}
+                  {%- endif %}
+                </li>
+              {%- endfor %}
+            </ul>
+          </nav>
+        </div>
+      </header>
+
+      <main class="pb-16 w-full flex-1 relative">
+        {{ content | safe }}
+        {{ ui.grunge(pos='bot') }}
+      </main>
+
+      {%- macro footerNavHeading(title='') %}
+      <b class="pb-4 text-(gray-500 lg) font-semibold block lg:(text-xl)">{{ title }}</b>
+      {%- endmacro %}
+      {%- macro footerNav(title='',url='') %}
+      <li class="font-semibold"><a href="{{ url }}" class="motion-safe:(transition) hover:(text-gray-100)">{{ title }}</a></li>
+      {%- endmacro %}
+
+      <footer class="py-32 px-4 w-full text-gray-600 flex-none relative lg:(px-0)">
+        <div class="mx-auto px-4 max-w-screen-xl lg:(flex)">
+          <div class="mb-8 flex-1 text-center lg:(mb-0 text-start)">
+            <a href="/" class="inline-block opacity-50 motion-safe:(transition) hover:(opacity-100)"><img src="/_assets/img/foot-logo.png" alt="{{ site.meta.title }}" class="inline-block" /></a>
+          </div>
+          <ul class="mb-0 flex justify-center text-base space-x-4 lg:(space-x-16)">
+            <li>{{ footerNavHeading(title='Sitemap') }}
+              <ul class="lg:(space-y-3)">
+                {%- for item in collections.all | eleventyNavigation %}
+                {{ footerNav(title=item.title,url=item.url) }}
+                {% endfor %}
+              </ul>
+            </li>
+            <li>{{ footerNavHeading(title='Download') }}
+              <ul class="lg:(space-y-3)">
+                {%- for item in app.download %}
+                  {{ footerNav(title=item.title,url=item.url) }}
+                {%- endfor %}
+              </ul>
+            </li>
+            <li>{{ footerNavHeading(title='Social') }}
+              <ul class="lg:(space-y-3)">
+                {{ footerNav(title='Twitter',url='https://twitter.com/openemu') }}
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </footer>
+
+    </div>
+
+    {% renderblock 'js' %}
+    <script src="/_assets/js/_app.js?v={% bust %}"></script>
+
+  </body>
+
+</html>

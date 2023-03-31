@@ -1,0 +1,31 @@
+---
+layout: 'layouts/default.njk'
+title: Donate
+eleventyComputed:
+  eleventyNavigation:
+    key: "{{ title }}"
+    order: 5
+---
+
+{%- import "components/ui.njk" as ui -%}
+
+{% call ui.section() %}
+  {% call ui.heading() %}
+    {{ title }}
+  {% endcall %}
+  <ul class="grid-(& cols-1) gap-12 md:(grid-cols-2) lg:(grid-cols-4)">
+    {% for item in collections.vendors %}
+      <li>
+        {% if item.data.url %}
+          <a href="{{ item.data.url }}">
+            {% endif %}
+            <iconify-icon icon="{{ item.data.ico }}" width="1em" height="1em" inline="false" class="iconify text-5xl md:(text-8xl)"></iconify-icon>
+            <h2>{{ item.data.title }}</h2>
+            {{ item.content | safe }}
+            {% if item.data.url %}
+          </a>
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+{% endcall %}

@@ -1,0 +1,10 @@
+---
+meta:
+  title: OpenEmu - Multiple Video Game System
+  description: Console and Arcade video game emulator for macOS
+  url: https://openemu.org
+  author: Craig Erskine
+analytics: |-
+  // google analytics
+  window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+  ga('create', 'UA-XXXXXXX-X', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')

@@ -1,0 +1,18 @@
+{%- macro heading() %}
+  <h1 class="mb-4 py-3 max-w-md text-(gray-100 2xl) font-bold">
+    {{ caller() }}
+  </h1>
+{%- endmacro %}
+
+{%- macro section(size='xl',class='') %}
+  <section class="relative{% if class !== ''%} {{ class }}{% endif %}">
+    <div class="mx-auto px-4 max-w-screen-{{ size }}">
+      {{ caller() }}
+    </div>
+  </section>
+{%- endmacro %}
+
+{%- macro grunge(pos='top') %}
+  {% set position %}{% if pos == 'top' %}top{% else %}bottom{% endif %}{% endset %}
+  <b class="h-10 bg-(repeat-x {{ position }}) absolute inset-x-0 {{ position }}-0" style="background-image: url('/_assets/img/grunge-{{ pos }}.png');" aria-hidden="true"></b>
+{%- endmacro %}

@@ -1,0 +1,129 @@
+---
+title: OpenEmu, changing the world of video game emulation... one console at a time.
+lead: For the first time, the 'It just works' philosophy now extends to open source video game emulation on the Mac. With OpenEmu, it is extremely easy to add, browse, organize and with a compatible gamepad, play those favorite games (ROMs) you already own.
+gallery:
+  - th: intro-th1.jpg
+    main: intro-nes-grid.png
+  - th: intro-th2.jpg
+    main: intro-gb-grid.png
+  - th: intro-th3.jpg
+    main: intro-md.png
+  - th: intro-th4.jpg
+    main: intro-prefs.png
+  - th: intro-th5.jpg
+    main: intro-saves.png
+  - th: intro-th6.jpg
+    main: intro-list.png
+prefs:
+  title: Take Control
+  lead: Up, Up, Down, Down, Left, Right, Left, Right, B, A, Start
+  body: |-
+    Why restrict yourself to just the keyboard? Although it is not a requirement, OpenEmu is best used with a peripheral gamepad or controller to interact with your games.
+    <br /><br />
+    Via the Controller Preferences, simply auto-magically assign buttons with any generic HID compliant USB or Bluetooth game controller.
+    <br /><br />
+    Plug in your gamepad, select it from the list... and press start to begin your adventures!
+  action: Learn More
+  url: https://github.com/OpenEmu/OpenEmu/wiki#supported-controllers
+organized:
+  title: Time To Get Organized
+  lead: Everything in its place. Automatically
+  body: We combine some of the best emulation projects together into one beautiful unified application that simply organizes your personal games library. Watch as you drop in backups of your games (ROMs) &amp; they are gracefully added to their appropriate library along with original box art!
+  list:
+    - Drag n' Drop a backup game (ROM) from your Mac desktop.
+    - OpenEmu 'scans' your game and begins the organization process.
+    - Your game is now neatly organized and you are ready to start playing!
+features:
+  title: Features Overview
+  lead: An exciting world of video games is within your grasp.
+  section:
+    - title: Library
+      lead: One of the standout features of OpenEmu is how it organizes all your games into one unique, unified games library. Watch as backups of the games (ROMs) you already own are gracefully added to their appropriate library and box art is magically added. You can even create your own ‘collections’ mix and matched from different consoles.
+      img: book
+      col: 1
+    - title: Controls & Controllers
+      lead: Any generic HID compliant USB or Bluetooth game controller should work with OpenEmu out of the box. OpenEmu now automatically maps controls for the following recognized devices in our database...
+      img: controls
+      col: 1
+      list:
+        - title: PlayStation Dualshock 3 and Dualshock 4
+        - title: Nintendo Switch Pro Controller
+        - title: Wiimote and Wii U Pro
+        - title: Xbox One S Wireless Controller
+        - title: Xbox 360 & 3rd party (driver required)
+        - title: SteelSeries Nimbus
+        - title: SteelSeries Stratus XL
+        - title: Horipad Ultimate
+        - title: Retro-Bit Official Sega Genesis/Sega Saturn Bluetooth Controller 8-Button Arcade Pad
+        - title: Sega Saturn USB
+        - title: PS3 Neo Geo Pad USB
+        - title: Logitech series (Dual Action, Rumblepad 2, Gamepad F310/F510/F710)
+        - title: Gravis GamePad Pro
+        - title: N64 Adaptoid
+    - title: Cores & Systems
+      lead: OpenEmu is modular, and thanks to the work of other great open source projects, it can emulate a wide variety of video game systems (we call them 'cores'). OpenEmu emulates the following systems...
+      img: chip
+      col: 2
+      list:
+        - title: Atari 2600
+          meta: Stella
+        - title: Atari 5200
+          meta: Atari800
+        - title: Atari 7800
+          meta: ProSystem
+        - title: Atari Lynx
+          meta: Mednafen
+        - title: ColecoVision
+          meta: CrabEmu
+        - title: Famicom Disk System
+          meta: Nestopia
+        - title: Game Boy / Game Boy Color
+          meta: Gambatte
+        - title: Game Boy Advance
+          meta: mGBA
+        - title: Game Gear
+          meta: Genesis Plus GX
+        - title: Intellivision
+          meta: Bliss
+        - title: NeoGeo Pocket
+          meta: Mednafen
+        - title: Nintendo (NES) / Famicom
+          meta: FCEUX, Nestopia
+        - title: Nintendo DS
+          meta: DeSmuME
+        - title: Nintendo 64
+          meta: Mupen64Plus
+        - title: Nintendo GameCube
+          meta: Dolphin
+        - title: Odyssey²/Videopac+
+          meta: O2EM
+        - title: PC-FX
+          meta: Mednafen
+        - title: SG-1000
+          meta: Genesis Plus GX
+        - title: Sega 32X
+          meta: picodrive
+        - title: Sega CD / Mega CD
+          meta: Genesis Plus GX
+        - title: Sega Genesis / Mega Drive
+          meta: Genesis Plus GX
+        - title: Sega Master System
+          meta: Genesis Plus GX
+        - title: Sega Saturn
+          meta: Mednafen
+        - title: Sony PlayStation
+          meta: Mednafen
+        - title: Sony PSP
+          meta: PPSSPP
+        - title: Super Nintendo (SNES)
+          meta: BSNES, Snes9x
+        - title: TurboGrafx-16/PC Engine/SuperGrafx
+          meta: Mednafen
+        - title: TurboGrafx-CD/PC Engine CD
+          meta: Mednafen
+        - title: Virtual Boy
+          meta: Mednafen
+        - title: Vectrex
+          meta: VecXGL
+        - title: WonderSwan
+          meta: Mednafen

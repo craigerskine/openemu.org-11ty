@@ -1,0 +1,160 @@
+---
+layout: 'layouts/default.njk'
+eleventyNavigation:
+  key: Overview
+  order: 1
+---
+
+{%- import "components/ui.njk" as ui -%}
+
+{% call ui.section(class='pb-16') %}
+<div class="mx-auto max-w-screen-xl lg:(flex)">
+  <div class="mx-auto pt-3 max-w-md lg:(mr-16 w-1/3)">
+    {% call ui.heading() %}
+      {{ home.title }}
+    {% endcall %}
+    <p>{{ home.lead }}</p>
+    <ul class="my-8 text-center lg:(text-start)">
+      <li>
+        <p class="mb-4 flex items-center justify-center gap-4 lg:(justify-start)">
+          <a href="{{ app.action.url }}" class="btn-red py-3 px-6 text-base">{{ app.action.title }}</a>
+          <b class="text-xs">
+            <a href="./rnotes/{{ app.version }}.html" title="Release Notes" class="text-gray-500 motion-safe:(transition) hover:(text-gray-300)">v{{ app.version }}</a>
+          </b>
+        </p>
+        <ul class="mb-2 text-xs font-bold inline-flex gap-4">
+          {%- for item in app.download %}
+            <li>
+              <a href="{{ item.url }}" class="text-gray-500 inline-flex items-center gap-1 motion-safe:(transition) hover:(text-gray-300)">
+                <iconify-icon icon="{{ item.ico }}" width="1em" height="1em" inline="false" class="iconify text-xl opacity-50"></iconify-icon>
+                {{ item.title }}
+              </a>
+            </li>
+          {%- endfor %}
+        </ul>
+      </li>
+    </ul>
+    <ul class="gallery intro-th mb-8 -ml-5 flex lg:(mb-0 flex-wrap)">
+      <template x-for="(item, index) in gallery" hidden>
+        <li class="ml-5 relative lg:(mb-5 w-auto)">
+          <a href="#" @click.prevent="galleryActive = index" :class="['block motion-safe:(transition)', index == galleryActive ? 'opacity-100' : 'opacity-50']">
+            <img :src="'/_assets/img/' + item.th" alt="screenshot thumbnail" class="shadow-img" />
+            <template x-if="index == galleryActive">
+              <i class="-m-[3px] absolute inset-0 shadow-ring rounded-sm motion-safe(transition)"></i>
+            </template>
+          </a>
+        </li>
+      </template>
+    </ul>
+  </div>
+  <div class="flex-1 relative">
+    <div class="gallery text-center lg:(w-screen text-start absolute inset-0)">
+      <template x-for="(item, index) in gallery">
+        <div x-show="index == galleryActive" class="motion-safe:(transition duration-500 ease-in-out) lg:(absolute inset-0)"
+          x-transition:enter="absolute inset-0"
+          x-transition:enter-start="opacity-0 blur-lg"
+          x-transition:enter-end="opacity-100"
+          x-transition:leave-start="opacity-100"
+          x-transition:leave-end="opacity-0 blur-lg"
+        >
+          <img :src="'/_assets/img/' + item.main" alt="screenshot" class="intro-img lg:(sticky top-0 right-0)" />
+        </div>
+      </template>
+    </div>
+  </div>
+</div>
+{% endcall %}
+
+<section x-intersect:enter.threshold.25="explode = true" x-intersect:leave.threshold.25="explode = false" :class="['controls pt-16 h-[800px] bg-repeat-x relative overflow-hidden lg:(pt-0)', explode ? 'explode' : '' ]" style="background-image: url('/_assets/img/wood.jpg');">
+  <div class="mx-auto max-w-[940px] justify-center relative lg:(flex justify-end)">
+    <div :class="['controls-prefs mx-auto mb-4 max-w-xs text-center top-[87px] -left-[216px] z-20 rounded-[10px] shadow-prefs opacity-0 motion-safe:(transition duration-1000) lg:(mx-0 pt-0 max-w-full text-left absolute)', explode ? 'opacity-100' : 'opacity-0']">
+      <img src="/_assets/img/controls-prefs.png" alt="prefs" />
+    </div>
+    <div :class="['controls-intro mx-auto py-0 px-4 max-w-xs text-gray-900 space-y-4 relative z-20 transform motion-safe:(transition duration-1000) lg:(mx-0 py-32 px-2)', explode ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0']">
+      <h3 class="text-xl font-bold">{{ home.prefs.title }}</h3>
+      <h4 class="text-lg font-normal">{{ home.prefs.lead }}</h4>
+      <p>{{ home.prefs.body | safe }}</p>
+      <p><a href="{{ home.prefs.url }}" class="font-bold text-current inline-flex items-center gap-1 motion-safe:(transition) hover:(text-gray-100)">{{ home.prefs.action }} <iconify-icon icon="mdi:chevron-right" width="1em" height="1em" inline="false" class="iconify text-xl"></iconify-icon></a></p>
+    </div>
+    <div class="controller controller-nes hidden absolute top-0 -left-[181px] motion-safe:(transition-all duration-1000) lg:(block)"><img src="/_assets/img/controls-nes.png" alt="nes" /></div>
+    <div class="controller controller-sms hidden absolute top-0 -left-[548px] motion-safe:(transition-all duration-1000) lg:(block)"><img src="/_assets/img/controls-sms.png" alt="sega master system" /></div>
+    <div class="controller controller-gb hidden absolute top-[350px] -left-[463px] motion-safe:(transition-all duration-1000) lg:(block)"><img src="/_assets/img/controls-gb.png" alt="gameboy" /></div>
+    <div class="controller controller-snes hidden absolute top-0 right-[200px] motion-safe:(transition-all duration-1000) lg:(block)"><img src="/_assets/img/controls-snes.png" alt="snes" /></div>
+    <div class="controller controller-gba hidden absolute top-[241px] right-[137px] motion-safe:(transition-all duration-1000) lg:(block)"><img src="/_assets/img/controls-gba.png" alt="gameboy advance" /></div>
+    <div class="controller controller-md hidden absolute -top-[64px] -right-[137px] motion-safe:(transition-all duration-1000) lg:(block)"><img src="/_assets/img/controls-md.png" alt="mega drive" /></div>
+  </div>
+</section>
+
+{% call ui.section(class='py-16') %}
+  {{ ui.grunge() }}
+  {{ ui.grunge(pos='bot') }}
+  <div class="mx-auto pb-12 max-w-screen-sm text-center">
+    <h2 class="mb-0 text-gray-100 text-xl font-bold">{{ home.organized.title }}</h2>
+    <p class="mb-4 text-gray-100 text-base">{{ home.organized.lead }}</p>
+    <p>{{ home.organized.body }}</p>
+  </div>
+  <div class="mx-auto max-w-screen-lg">
+    <ul class="text-center space-y-12 lg:(flex justify-between space-y-0)">
+      {%- for item in home.organized.list %}
+        <li class="mx-auto lg:mx-0 max-w-[260px] space-y-6">
+          <p class="btn-red w-12 h-12 text-xl"><b class="m-auto font-semibold">{{ loop.index }}</b></p>
+          <figure class="space-y-6">
+            <img src="/_assets/img/org-step{{ loop.index }}.jpg" alt="step {{ loop.index }}" class="shadow-img" />
+            <figcaption class="px-2 lg:(mb-0)">{{ item }}</figcaption>
+          </figure>
+        </li>
+      {%- endfor %}
+    </ul>
+  </div>
+{% endcall %}
+
+{% call ui.section(size='lg',class='pt-16') %}
+  <h2 class="mb-1 text-lg text-center font-bold lg:(text-start)">{{ home.features.title }}</h2>
+  <p class="mb-16 text-center lg:(text-start)">{{ home.features.lead }}</p>
+  <div class="lg:(flex justify-between)">
+    {%- for col, items in home.features.section | groupby('col') %}
+      <ul class="mx-auto max-w-lg flex-(& 1 col) gap-24 lg:(mx-0 p{% if col == 1 %}r{% else %}l{% endif %}-12)">
+        {%- for item in items %}
+          <li class="flex items-start gap-4">
+            <img src="/_assets/img/feature-{{ item.img }}.png" alt="{{ item.title }}" class="mt-1 flex-none" />
+            <div class="flex-1">
+              <h2 class="mb-1 text-(gray-300 lg) font-bold">{{ item.title }}</h2>
+              <p class="mb-5">{{ item.lead }}</p>
+              {%- if item.list.length %}
+                <ul class="divide-(y gray-500/25) text-xs lg:(text-sm)">
+                  {%- for sub in item.list %}
+                    <li class="p-1 flex items-center justify-between">
+                      <b class="text-gray-300">{{ sub.title }}</b>
+                      {%- if sub.meta %}
+                        <small title="Core" class="opacity-50">{{ sub.meta }}</small>
+                      {%- endif %}
+                    </li>
+                  {%- endfor %}
+                </ul>
+              {%- endif %}
+            </div>
+          </li>
+        {%- endfor %}
+      </ul>
+    {%- endfor %}
+  </div>
+{% endcall %}
+
+{% setblock 'js' %}
+<script>
+  document.addEventListener('alpine:init', () => {
+    Alpine.data('home', () => ({
+      explode: false,
+      galleryActive: 0,
+      gallery: [{%- for item in home.gallery -%}
+        {
+          th: "{{ item.th }}",
+          main: "{{ item.main }}",
+        },
+      {%- endfor -%}],
+    }))
+  })
+</script>
+{% endsetblock %}
+
+{% setblock 'data' %}home{% endsetblock %}

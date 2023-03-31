@@ -1,0 +1,13 @@
+---
+version: 2.3.3
+action:
+  title: Download Now
+  url: https://github.com/OpenEmu/OpenEmu/releases/download/v2.3.3/OpenEmu_2.3.3.zip
+requirement: For macOS (OS X) 10.14.4 or above.
+download:
+  - title: Experimental
+    ico: mdi:beaker
+    url: https://github.com/OpenEmu/OpenEmu/releases/download/v2.3.3/OpenEmu_2.3.3-experimental.zip
+  - title: Press Pack
+    ico: mdi:package-variant-closed
+    url: /_assets/files/press-pack-v2.zip
