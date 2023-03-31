@@ -12,18 +12,24 @@ All of the "data" is stored in `.yaml` files located in `./_site/_data/`. Simply
 - Use fronmatter at the top of the file:
 ```md
 ---
-title: My News Post
+title: My news post
 poster: https://optional-path-to-img.jpg
 date: YYYY-MM-DD
 ---
 
 Here's _my_ **amazing** news/blog post. {.text-center}
 ```
-- `title:` = Post tile 
+- `title:` = Post title 
 - `poster:` = Optional image, remove this line if you don;t have an image
 - `date:` = Required date field used to sort posts correctly, this must be in `YYYY-MM-DD` format
 
 Then just write your news/blog post in normal markdown. You can also use [markdown-it-attrs](https://github.com/arve0/markdown-it-attrs) to apply [Twind](https://twind.style) classes or other accessible attributes.
+
+### Post writing patterns
+
+- News/Blog titles should be sentence case. Don't Do This. Do this instead.
+- If you need to use a heading, only use `## Heading` or `H2` for accessibility reasons.
+- More to come...
 
 ---
 
