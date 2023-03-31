@@ -1,5 +1,6 @@
 ---
 title: Testing the news system using line-clamp on the "excerpt" and making a super long article title and junk like that
+poster: /_assets/img/news/placeholder.jpg
 date: 2023-03-31
 ---
 

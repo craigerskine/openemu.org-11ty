@@ -25,6 +25,18 @@ install({
     extend: {
       colors: ({ theme }) => ({
         gray: theme('colors.neutral'),
+        blue: {
+          50: '#F6F8FA',
+          100: '#EEF0F6',
+          200: '#D4DAE7',
+          300: '#BAC4D9',
+          400: '#8697BD',
+          500: '#526BA0',
+          600: '#4A6090',
+          700: '#3E5078',
+          800: '#314060',
+          900: '#28344E',
+        },
       }),
       fontFamily: ({ theme }) => ({
         sans: 'Inter,'+ theme('fontFamily.sans'),
