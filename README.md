@@ -27,7 +27,10 @@ Then just write your news/blog post in normal markdown. You can also use [markdo
 
 ### Post writing patterns
 
-- News/Blog titles should be sentence case. Don't Do This. Do this instead.
+- News/Blog titles should be sentence case.
+  - Don't Write Your Title Like This
+  - Do write your title like this
+- Don't use a period at the end of your news/blog title.
 - If you need to use a heading, only use `## Heading` or `H2` for accessibility reasons.
 - More to come...
 
