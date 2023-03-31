@@ -16,6 +16,8 @@ title: My News Post
 poster: https://optional-path-to-img.jpg
 date: YYYY-MM-DD
 ---
+
+Here's _my_ **amazing** news/blog post. {.text-center}
 ```
 - `title:` = Post tile 
 - `poster:` = Optional image, remove this line if you don;t have an image
