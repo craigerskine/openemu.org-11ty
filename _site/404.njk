@@ -5,8 +5,9 @@ title: 404
 
 {%- import "components/ui.njk" as ui -%}
 
-<article class="w-full">
-  {% call ui.heading() %}
-    {{ title }}
-  {% endcall %}
-</article>
+{% call ui.section() %}
+  <h1 class="m-auto py-8 px-4 text-([calc(4vw+4vh)] center) leading-none font-bold">
+    404
+    <small class="text-lg block opacity-70 md:(text-2xl)">↑ ↑ ↓ ↓ ← → ← → B A</small>
+  </h1>
+{% endcall %}
