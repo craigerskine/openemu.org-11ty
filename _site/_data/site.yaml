@@ -2,7 +2,7 @@
 meta:
   title: OpenEmu - Multiple Video Game System
   description: Console and Arcade video game emulator for macOS
-  url: https://openemu.org
+  url: https://openemu-org.netlify.app
   author: Craig Erskine
 analytics: |-
   // google analytics
