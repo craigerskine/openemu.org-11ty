@@ -1,9 +1,13 @@
 # openemu.org
 
 Site is built with [11ty](https://11ty.dev) and deploys to 100% static files.
+
+---
 ### Updating
 
 All of the "data" is stored in `.yaml` files located in `./_site/_data/`. Simply commit your changes to trigger a build and deploy.
+
+---
 ### Posting News
 
 - Create a `.md` file in `./_site/news/YYYY/MM/`
@@ -25,6 +29,7 @@ Here's _my_ **amazing** news/blog post. {.text-center}
 
 Then just write your news/blog post in normal markdown. You can also use [markdown-it-attrs](https://github.com/arve0/markdown-it-attrs) to apply [Twind](https://twind.style) classes or other accessible attributes.
 
+---
 ### Post writing patterns
 
 - News/Blog titles should be sentence case.
