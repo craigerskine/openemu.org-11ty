@@ -1,4 +1,4 @@
-# openemu.org
+# openemu.org [![Netlify Status](https://api.netlify.com/api/v1/badges/8adf2009-23c0-4700-9c70-3e6032554324/deploy-status)](https://app.netlify.com/sites/openemu-org/deploys)
 
 Site is built with [11ty](https://11ty.dev) and deploys to 100% static files.
 
