@@ -1,7 +1,10 @@
-{%- macro heading() %}
-  <h1 class="mb-4 py-3 max-w-md text-(gray-100 2xl) font-bold">
+{%- macro heading(lead='') %}
+  <h1 class="mb-4 py-3 max-w-md text-(gray-100 2xl) leading-tight font-semibold">
     {{ caller() }}
   </h1>
+  {%- if lead %}
+    <p class="max-w-md text-(gray-400/75 sm)">{{ lead }}</p>
+  {%- endif %}
 {%- endmacro %}
 
 {%- macro section(size='xl',class='') %}

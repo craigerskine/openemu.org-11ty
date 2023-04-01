@@ -1,7 +1,7 @@
 ---
 title: Bitcoin
 ico: simple-icons:bitcoin
-color: orange
+color: slate
 date: 0003-01-01
 ---
 

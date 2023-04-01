@@ -1,7 +1,7 @@
 ---
 title: Bitcoincash
 ico: simple-icons:bitcoincash
-color: lime
+color: slate
 date: 0004-01-01
 ---
 

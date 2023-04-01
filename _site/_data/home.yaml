@@ -28,7 +28,7 @@ prefs:
 organized:
   title: Time To Get Organized
   lead: Everything in its place. Automatically
-  body: We combine some of the best emulation projects together into one beautiful unified application that simply organizes your personal games library. Watch as you drop in backups of your games (ROMs) &amp; they are gracefully added to their appropriate library along with original box art!
+  body: We combine some of the best emulation projects together into one beautiful unified application that simply organizes your personal games library. Watch as you drop in backups of your games (ROMs) & they are gracefully added to their appropriate library along with original box art!
   list:
     - Drag n' Drop a backup game (ROM) from your Mac desktop.
     - OpenEmu 'scans' your game and begins the organization process.
