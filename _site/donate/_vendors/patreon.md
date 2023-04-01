@@ -6,4 +6,4 @@ color: red
 date: 0002-01-01
 ---
 
-Worldwide Credit, Debit, or PayPal. One-time or monthly.
+Worldwide Credit/Debit/PayPal. One-time or monthly.

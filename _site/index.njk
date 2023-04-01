@@ -37,7 +37,7 @@ eleventyNavigation:
       <template x-for="(item, index) in gallery" hidden>
         <li class="ml-5 relative lg:(mb-5 w-auto)">
           <a href="#" @click.prevent="galleryActive = index" :class="['block motion-safe:(transition)', index == galleryActive ? 'opacity-100' : 'opacity-50']">
-            <img :src="'/_assets/img/' + item.th" alt="screenshot thumbnail" class="shadow-img" />
+            <img :src="'/_assets/img/' + item.th" alt="screenshot thumbnail" class="pointer-events-none shadow-img" />
             <template x-if="index == galleryActive">
               <i class="-m-[3px] absolute inset-0 shadow-ring rounded-sm motion-safe(transition)"></i>
             </template>
@@ -56,7 +56,7 @@ eleventyNavigation:
           x-transition:leave-start="opacity-100"
           x-transition:leave-end="opacity-0 blur-lg"
         >
-          <img :src="'/_assets/img/' + item.main" alt="screenshot" class="intro-img lg:(sticky top-0 right-0)" />
+          <img :src="'/_assets/img/' + item.main" alt="screenshot" class="intro-img pointer-events-none lg:(sticky top-0 right-0)" />
         </div>
       </template>
     </div>
@@ -64,10 +64,10 @@ eleventyNavigation:
 </div>
 {% endcall %}
 
-<section x-intersect:enter.threshold.25="explode = true" x-intersect:leave.threshold.25="explode = false" :class="['controls pt-16 h-[800px] bg-repeat-x relative overflow-hidden lg:(pt-0)', explode ? 'explode' : '' ]" style="background-image: url('/_assets/img/wood.jpg');">
+<section x-intersect:enter.half="explode = true" x-intersect:leave.half="explode = false" :class="['controls pt-16 h-[800px] bg-repeat-x relative overflow-hidden lg:(pt-0)', explode ? 'explode' : '' ]" style="background-image: url('/_assets/img/wood.jpg');">
   <div class="mx-auto max-w-[940px] justify-center relative lg:(flex justify-end)">
     <div :class="['controls-prefs mx-auto mb-4 max-w-xs text-center top-[87px] -left-[216px] z-20 rounded-[10px] shadow-prefs opacity-0 motion-safe:(transition duration-1000) lg:(mx-0 pt-0 max-w-full text-left absolute)', explode ? 'opacity-100' : 'opacity-0']">
-      <img src="/_assets/img/controls-prefs.png" alt="prefs" />
+      <img src="/_assets/img/controls-prefs.png" alt="prefs" class="pointer-events-none" />
     </div>
     <div :class="['controls-intro mx-auto py-0 px-4 max-w-xs text-gray-900 space-y-4 relative z-20 transform motion-safe:(transition duration-1000) lg:(mx-0 py-32 px-2)', explode ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0']">
       <h3 class="text-xl font-bold">{{ home.prefs.title }}</h3>
@@ -75,12 +75,12 @@ eleventyNavigation:
       <p>{{ home.prefs.body | safe }}</p>
       <p><a href="{{ home.prefs.url }}" class="font-bold text-current inline-flex items-center gap-1 motion-safe:(transition) hover:(text-gray-100)">{{ home.prefs.action }} <iconify-icon icon="mdi:chevron-right" width="1em" height="1em" inline="false" class="iconify text-xl"></iconify-icon></a></p>
     </div>
-    <div class="controller controller-nes hidden absolute top-0 -left-[181px] motion-safe:(transition-all duration-1000) lg:(block)"><img src="/_assets/img/controls-nes.png" alt="nes" /></div>
-    <div class="controller controller-sms hidden absolute top-0 -left-[548px] motion-safe:(transition-all duration-1000) lg:(block)"><img src="/_assets/img/controls-sms.png" alt="sega master system" /></div>
-    <div class="controller controller-gb hidden absolute top-[350px] -left-[463px] motion-safe:(transition-all duration-1000) lg:(block)"><img src="/_assets/img/controls-gb.png" alt="gameboy" /></div>
-    <div class="controller controller-snes hidden absolute top-0 right-[200px] motion-safe:(transition-all duration-1000) lg:(block)"><img src="/_assets/img/controls-snes.png" alt="snes" /></div>
-    <div class="controller controller-gba hidden absolute top-[241px] right-[137px] motion-safe:(transition-all duration-1000) lg:(block)"><img src="/_assets/img/controls-gba.png" alt="gameboy advance" /></div>
-    <div class="controller controller-md hidden absolute -top-[64px] -right-[137px] motion-safe:(transition-all duration-1000) lg:(block)"><img src="/_assets/img/controls-md.png" alt="mega drive" /></div>
+    <div class="controller controller-nes hidden absolute top-0 -left-[181px] motion-safe:(transition-all duration-1000) lg:(block)"><img src="/_assets/img/controls-nes.png" alt="nes" class="pointer-events-none" /></div>
+    <div class="controller controller-sms hidden absolute top-0 -left-[548px] motion-safe:(transition-all duration-1000) lg:(block)"><img src="/_assets/img/controls-sms.png" alt="sega master system" class="pointer-events-none" /></div>
+    <div class="controller controller-gb hidden absolute top-[350px] -left-[463px] motion-safe:(transition-all duration-1000) lg:(block)"><img src="/_assets/img/controls-gb.png" alt="gameboy" class="pointer-events-none" /></div>
+    <div class="controller controller-snes hidden absolute top-0 right-[200px] motion-safe:(transition-all duration-1000) lg:(block)"><img src="/_assets/img/controls-snes.png" alt="snes" class="pointer-events-none" /></div>
+    <div class="controller controller-gba hidden absolute top-[241px] right-[137px] motion-safe:(transition-all duration-1000) lg:(block)"><img src="/_assets/img/controls-gba.png" alt="gameboy advance" class="pointer-events-none" /></div>
+    <div class="controller controller-md hidden absolute -top-[64px] -right-[137px] motion-safe:(transition-all duration-1000) lg:(block)"><img src="/_assets/img/controls-md.png" alt="mega drive" class="pointer-events-none" /></div>
   </div>
 </section>
 
