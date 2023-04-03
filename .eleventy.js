@@ -1,5 +1,6 @@
 const { EleventyRenderPlugin } = require("@11ty/eleventy");
-const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
+const EleventyNavigationPlugin = require("@11ty/eleventy-navigation");
+const EleventyRssPlugin = require("@11ty/eleventy-plugin-rss");
 const esbuild = require("esbuild");
 const markdownIt = require("markdown-it");
 const markdownItAttrs = require("markdown-it-attrs");
@@ -17,7 +18,8 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addWatchTarget('./_site/_app/_app.js');
   
   eleventyConfig.addPlugin(EleventyRenderPlugin);
-  eleventyConfig.addPlugin(eleventyNavigationPlugin);
+  eleventyConfig.addPlugin(EleventyNavigationPlugin);
+  eleventyConfig.addPlugin(EleventyRssPlugin);
 
   //{% renderTemplate "md" %}
   //# Blah{.text-center}

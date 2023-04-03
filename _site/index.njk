@@ -96,7 +96,7 @@ eleventyNavigation:
     <ul class="text-center space-y-12 lg:(flex justify-between space-y-0)">
       {%- for item in home.organized.list %}
         <li class="mx-auto lg:mx-0 max-w-[260px] space-y-6">
-          <p class="btn-red w-12 h-12 text-xl"><b class="m-auto font-semibold">{{ loop.index }}</b></p>
+          <p class="btn-red w-12 h-12 text-xl pointer-events-none"><b class="m-auto font-semibold">{{ loop.index }}</b></p>
           <figure class="space-y-6">
             <img src="/_assets/img/org-step{{ loop.index }}.jpg" alt="step {{ loop.index }}" class="shadow-img" />
             <figcaption class="px-2 lg:(mb-0)">{{ item }}</figcaption>
@@ -108,7 +108,7 @@ eleventyNavigation:
 {% endcall %}
 
 {% call ui.section(size='lg',class='pt-16') %}
-  <h2 class="mb-1 text-lg text-center font-bold lg:(text-start)">{{ home.features.title }}</h2>
+  <h2 class="mb-1 text-(gray-100 lg) text-center font-bold lg:(text-start)">{{ home.features.title }}</h2>
   <p class="mb-16 text-center lg:(text-start)">{{ home.features.lead }}</p>
   <div class="lg:(flex justify-between)">
     {%- for col, items in home.features.section | groupby('col') %}

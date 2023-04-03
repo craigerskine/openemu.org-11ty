@@ -1,0 +1,37 @@
+---
+permalink: feed.json
+eleventyExcludeFromCollections: true
+metadata:
+  title: OpenEmu News
+  subtitle: Developer updates, news, and process info.
+  language: en
+  author:
+    name: OpenEmu
+---
+{
+  "version": "https://jsonfeed.org/version/1.1",
+  "title": "{{ metadata.title }}",
+  "language": "{{ metadata.language }}",
+  "home_page_url": "{{ site.meta.url }}",
+  "feed_url": "{{ permalink | absoluteUrl(site.meta.url) }}",
+  "description": "{{ metadata.subtitle }}",
+  "author": {
+    "name": "{{ metadata.author.name }}",
+    "url": "{{ site.meta.url }}"
+  },
+  "items": [
+    {%- for post in collections.news | reverse %}
+    {%- set absolutePostUrl = post.url | absoluteUrl(site.meta.url) %}
+    {
+      "id": "{{ absolutePostUrl }}",
+      "url": "{{ absolutePostUrl }}",
+      "title": "{{ post.data.title }}",
+      "content_html": {% if post.templateContent %}{{ post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) | dump | safe }}{% else %}""{% endif %},
+      {%- if post.data.poster %}
+      "image": "{{ post.data.poster | absoluteUrl(site.meta.url) }}",
+      {%- endif %}
+      "date_published": "{{ post.date | dateToRfc3339 }}"
+    }{% if not loop.last %},{% endif %}
+    {%- endfor %}
+  ]
+}
