@@ -21,6 +21,9 @@ layout: 'layouts/default.njk'
         <time class="text-gray-500" datetime="{{ page.date.toLocaleDateString('en-US', {month: '2-digit', day: '2-digit', year: 'numeric', timeZone: 'UTC'}) }}">{{ page.date.toLocaleDateString('en-US', {month: 'long', day: '2-digit', year: 'numeric', timeZone: 'UTC'}) }}</time>
         <small class="block text-(gray-600 xs)">Posted in <a href="/news/" class="font-bold motion-safe:(transition) hover:(text-gray-300)">News</a></small>
         {% endif %}
+        {% if '/donate/' in page.url %}
+        <p><img src="/_assets/img/qr.png" alt="qr code" class="rounded shadow-img" /></p>
+        {% endif %}
       </div>
     </div>
     <div class="py-3 md:(col-span-4)">
