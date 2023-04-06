@@ -1,3 +1,12 @@
+{%- macro nav(title='',url='#',current=false) -%}
+  <a href="{{ url }}" class="{% if current %}text-red-500{% else %}text-red-700{% endif %} group relative motion-safe:(transition) hover:(text-white)"{% if current %} aria-current="page"{% endif %}>
+    {{ title }}
+    {%- if current %}
+    <b class="h-px bg-gradient-to-r from-transparent via-current to-transparent absolute inset-x-0 -bottom-1.5 opacity-50" aria-hidden="true"></b>
+    {%- endif %}
+  </a>
+{%- endmacro -%}
+
 {%- macro heading(lead='') %}
   <h1 class="mb-4 py-3 max-w-md text-(gray-100 2xl) leading-tight font-semibold">
     {{ caller() }}

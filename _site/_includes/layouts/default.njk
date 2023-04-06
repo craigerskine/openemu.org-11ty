@@ -1,7 +1,4 @@
 {%- import "components/ui.njk" as ui -%}
-{%- macro nav(title='',url='#',current=false) -%}
-<a href="{{ url }}" class="{% if current %}text-red-500{% else %}text-red-700{% endif %} motion-safe:(transition) hover:(text-white)"{% if current %} aria-current="page"{% endif %}>{{ title }}</a>
-{%- endmacro -%}
 
 <!doctype html>
 <html lang="en" class="bg-gray-900" x-data="{% renderblock 'data' -%}" x-cloak>
@@ -12,13 +9,16 @@
     <title>{%- if title -%}{{ title }} - {{ site.meta.title }}{%- else -%}{{ site.meta.title }}{%- endif -%}</title>
     <meta name="description" content="{{ site.meta.description }}" />
     <meta name="author" content="{{ site.meta.author }}" />
+    {%- if redirect %}
+    <meta http-equiv="refresh" content="5; url='{{ redirect }}'" />
+    {%- endif %}
     <meta name="generator" content="{{ eleventy.generator }}" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <meta property="og:title" content="{{ site.meta.title }}" />
     <meta property="og:description" content="{{ site.meta.description }}" />
     <meta property="og:url" content="{{ site.meta.url }}{{ page.url }}" />
-    <meta property="og:image" content="{{ site.meta.url }}/og-image.png" />
+    <meta property="og:image" content="{% if poster %}{{ poster }}{% else %}{{ site.meta.url }}/og-image.png{% endif %}" />
     <meta property="og:image:width" content="152" />
     <meta property="og:image:height" content="152" />
     <meta name="theme-color" content="#111111" />
@@ -49,13 +49,13 @@
                 <a href="/" class="inline-block transform motion-safe:(transition) hover:(-translate-y-[3px])"><img src="/_assets/img/logo.png" alt="{{ site.meta.title }}" /></a>
               </li>
               {%- for item in collections.all | eleventyNavigation %}
-              <li class="mx-2 lg:(mx-{% if item.order == 2 or item.order == 4 %}24{% else %}0{% endif %} order-{{ item.order }})">
+              <li class="mx-2 lg:(mx-0 w-48 order-{{ item.order }}{% if item.order > 2 %} text-end{% endif %})">
                 {%- if item.url == '/' %}
                 {%- set current %}{% if item.url == '/' and page.url == '/' %}true{% endif %}{%- endset %}
-                {{ nav(title=item.key,url=item.url,current=current) }}
+                {{ ui.nav(title=item.key,url=item.url,current=current) }}
                 {%- else %}
                 {%- set current %}{% if item.url in page.url %}true{% endif %}{%- endset %}
-                {{ nav(title=item.key,url=item.url,current=current) }}
+                {{ ui.nav(title=item.key,url=item.url,current=current) }}
                 {%- endif %}
               </li>
               {%- endfor %}
