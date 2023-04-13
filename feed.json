@@ -2,20 +2,20 @@
   "version": "https://jsonfeed.org/version/1.1",
   "title": "OpenEmu News",
   "language": "en",
-  "home_page_url": "https://openemu-org.netlify.app",
-  "feed_url": "https://openemu-org.netlify.app/feed.json",
+  "home_page_url": "https://craigerskine.github.io/openemu.org-11ty",
+  "feed_url": "https://craigerskine.github.io/feed.json",
   "description": "Developer updates, news, and process info.",
   "author": {
     "name": "OpenEmu",
-    "url": "https://openemu-org.netlify.app"
+    "url": "https://craigerskine.github.io/openemu.org-11ty"
   },
   "items": [
     {
-      "id": "https://openemu-org.netlify.app/news/2023/04/welcome/",
-      "url": "https://openemu-org.netlify.app/news/2023/04/welcome/",
+      "id": "https://craigerskine.github.io/news/2023/04/welcome/",
+      "url": "https://craigerskine.github.io/news/2023/04/welcome/",
       "title": "Welcome to OpenEmu news",
-      "content_html": "<p>By popular demand we have implemented a news section to keep you all posted on what we are current working on and junk like that. Believe it or not, the original design specs accounted for this scenario so there was very little &quot;design&quot; work that had to added.</p>\n<p><strong>Plans for this section:</strong></p>\n<ul>\n<li>Developer updates</li>\n<li>Design processes</li>\n<li>Other vide game emulation news</li>\n</ul>\n<p class=\"text-sm\">So, get ready for some really cool articles and news updates. And if you are a real nerd you subscribe to these updates via a <a href=\"https://openemu-org.netlify.app/feed.json\">JSON feed</a>.</p>\n",
-      "image": "https://openemu-org.netlify.app/_assets/img/news/placeholder.jpg",
+      "content_html": "<p>By popular demand we have implemented a news section to keep you all posted on what we are current working on and junk like that. Believe it or not, the original design specs accounted for this scenario so there was very little &quot;design&quot; work that had to added.</p>\n<p><strong>Plans for this section:</strong></p>\n<ul>\n<li>Developer updates</li>\n<li>Design processes</li>\n<li>Other vide game emulation news</li>\n</ul>\n<p class=\"text-sm\">So, get ready for some really cool articles and news updates. And if you are a real nerd you subscribe to these updates via a <a href=\"https://craigerskine.github.io/feed.json\">JSON feed</a>.</p>\n",
+      "image": "https://craigerskine.github.io/_assets/img/news/placeholder.jpg",
       "date_published": "2023-04-05T00:00:00Z"
     }
   ]
