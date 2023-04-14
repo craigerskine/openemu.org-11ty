@@ -22,10 +22,12 @@ eleventyComputed:
         <li class="py-8 relative md:(pr-5 grid-(& cols-4) items-start gap-12 items-baseline)">
           <div class="text-gray-500">
             {%- if item.data.poster %}
-              <figure class="mb-3 py-1">
+            <a href="{{ item.url | url }}" class="mb-3 py-1 block opacity-70 motion-safe:(transition) hover:(opacity-100)">
+              <figure>
                 <img src="{{ item.data.poster }}" alt="{{ item.data.title }}" class="w-full shadow-img" />
                 <figcaption class="sr-only">{{ item.data.title }}</figcaption>
               </figure>
+            </a>
             {%- else %}
             {# <div class="py-1">
               <div class="bg-gray-900 flex aspect-video shadow-img">
