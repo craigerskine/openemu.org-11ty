@@ -4,7 +4,8 @@
   "private": false,
   "scripts": {
     "start": "eleventy --serve",
-    "build": "eleventy"
+    "build": "eleventy",
+    "ghpages": "eleventy --pathprefix=openemu.org-11ty"
   },
   "keywords": [
     "11ty",

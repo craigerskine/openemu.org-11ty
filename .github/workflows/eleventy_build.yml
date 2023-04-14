@@ -18,8 +18,7 @@ jobs:
 
         - run: npm ci
 
-        - run: npm run build
-        - run: npm run @11ty/eleventy --pathprefix=openemu.org-11ty
+        - run: npm run ghpages
 
         - name: Deploy
           uses: peaceiris/actions-gh-pages@v3
