@@ -1,12 +1,17 @@
 # openemu.github.io | openemu.org
 
+- [x] [11ty](https://11ty.dev)
+- [x] [Twind](https://twind.style)
+- [x] [Alpine.js](https://alpinejs.dev)
+- [x] [esbuild](https://esbuild.github.io)
+
 Site is built with [11ty](https://11ty.dev) and deploys to 100% static files via GitHub pages.
 
 > DO NOT EDIT FILES IN THE `gh-pages` BRANCH!!!  
-> This branch gets auto generated/deployed when you push a commit in the main/master branch
+> That branch gets auto generated/deployed when you push a commit in the main/master
 
 ***
-### Install
+### :floppy_disk: Local install
 - Make sure you have node.js installed on your local machine
 - Clone this repo
 - Open the resulting folder in a terminal
@@ -17,12 +22,12 @@ Site is built with [11ty](https://11ty.dev) and deploys to 100% static files via
 Now you can make changes and see the results before you commit said changes.
 
 ***
-### Updating
+### :pencil2: Updating
 
 All of the "data" is stored in `.yaml` files located in `./_site/_data/`. Simply commit and push your changes to trigger a build and deploy.
 
 ***
-### Posting News
+### :memo: Posting news
 
 - Create a `.md` file in `./_site/news/YYYY/MM/`
   - `YYYY` = post year in 4 digit year format
@@ -44,7 +49,7 @@ Here's _my_ **amazing** news/blog post. {.text-center}
 Then just write your news/blog post in normal markdown. You can also use [markdown-it-attrs](https://github.com/arve0/markdown-it-attrs) to apply [Twind](https://twind.style) classes or other accessible attributes.
 
 ***
-### Post writing patterns
+### :speaking_head: Language voice
 
 - News/Blog titles should be sentence case.
   - Don't Write Your Title Like This
@@ -54,14 +59,7 @@ Then just write your news/blog post in normal markdown. You can also use [markdo
 - More to come...
 
 ***
-
-- [x] [11ty](https://11ty.dev)
-- [x] [Twind](https://twind.style)
-- [x] [Alpine.js](https://alpinejs.dev)
-- [x] [esbuild](https://esbuild.github.io)
-
-***
-### Changes
+### :timer_clock: Changes
 
 **04/30/2023**
 
@@ -70,19 +68,19 @@ Then just write your news/blog post in normal markdown. You can also use [markdo
 
 **05/17/2019**
 
-* ~~Removed build requirement~~
-* ~~Switched to Twind css-in-js~~
+* Removed build requirement
+* Switched to Twind css-in-js
 
 **03/07/2019**
 
-* ~~Decompressed the HTML output~~
-* ~~Added a true asset pipeline so future HTML/CSS/JS revisions will not require a cache flush or hard refresh from the user~~
-* ~~Removed the BrowserSync option since it is not compatible with an asset pipeline. Now you will have to manually click refresh in your browser when developing/testing locally~~
+* Decompressed the HTML output
+* Added a true asset pipeline so future HTML/CSS/JS revisions will not require a cache flush or hard refresh from the user
+* Removed the BrowserSync option since it is not compatible with an asset pipeline. Now you will have to manually click refresh in your browser when developing/testing locally
 
 **09/03/2018**  
 
-* ~~Complete rewrite~~
-* ~~Assets now fully compressed~~
-* ~~CSS is now responsive and functional using TailwindCSS~~
-* ~~Most data is templated via Vue.js~~
-* ~~Now uses a gulp build process (which includes a mini web server that auto reloads as you edit the CSS, JS, HTML)~~
+* Complete rewrite
+* Assets now fully compressed
+* CSS is now responsive and functional using TailwindCSS
+* Most data is templated via Vue.js
+* Now uses a gulp build process (which includes a mini web server that auto reloads as you edit the CSS, JS, HTML)

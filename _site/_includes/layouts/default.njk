@@ -111,6 +111,9 @@
 
     {% renderblock 'js' %}
     <script src="/_assets/js/_app.js?v={% bust %}"></script>
+    <noscript>
+      <style>body{display:block !important}*[style*="background-image"]{background-image: none!important;}</style>
+    </noscript>
 
   </body>
 
