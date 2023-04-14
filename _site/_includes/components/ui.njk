@@ -1,5 +1,5 @@
 {%- macro nav(title='',url='#',current=false) -%}
-  <a href="{{ url }}" class="{% if current %}text-red-500{% else %}text-red-700{% endif %} group relative motion-safe:(transition) hover:(text-white)"{% if current %} aria-current="page"{% endif %}>
+  <a href="{{ url | url }}" class="{% if current %}text-red-500{% else %}text-red-700{% endif %} group relative motion-safe:(transition) hover:(text-white)"{% if current %} aria-current="page"{% endif %}>
     {{ title }}
     {%- if current %}
     <b class="h-px bg-gradient-to-r from-transparent via-current to-transparent absolute inset-x-0 -bottom-1.5 opacity-50" aria-hidden="true"></b>
@@ -26,5 +26,5 @@
 
 {%- macro grunge(pos='top') %}
   {% set position %}{% if pos == 'top' %}top{% else %}bottom{% endif %}{% endset %}
-  <b class="h-10 bg-(repeat-x {{ position }}) absolute inset-x-0 {{ position }}-0" style="background-image: url('/_assets/img/grunge-{{ pos }}.png');" aria-hidden="true"></b>
+  <b class="h-10 bg-(repeat-x {{ position }}) absolute inset-x-0 {{ position }}-0" style="background-image: url('{{ '/' | url }}_assets/img/grunge-{{ pos }}.png');" aria-hidden="true"></b>
 {%- endmacro %}

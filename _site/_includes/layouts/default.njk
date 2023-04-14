@@ -17,18 +17,18 @@
 
     <meta property="og:title" content="{{ site.meta.title }}" />
     <meta property="og:description" content="{{ site.meta.description }}" />
-    <meta property="og:url" content="{{ site.meta.url }}{{ page.url }}" />
-    <meta property="og:image" content="{% if poster %}{{ poster }}{% else %}{{ site.meta.url }}/og-image.png{% endif %}" />
+    <meta property="og:url" content="{{ page.url | url }}" />
+    <meta property="og:image" content="{% if poster %}{{ poster }}{% else %}{{ '/' | url }}og-image.png{% endif %}" />
     <meta property="og:image:width" content="152" />
     <meta property="og:image:height" content="152" />
     <meta name="theme-color" content="#111111" />
 
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-    <link rel="manifest" href="/site.webmanifest" />
-    <link rel="author" type="text/plain" href="/humans.txt" />
+    <link rel="icon" type="image/x-icon" href="{{ '/' | url }}favicon.ico" />
+    <link rel="apple-touch-icon" href="{{ '/' | url }}apple-touch-icon.png" />
+    <link rel="manifest" href="{{ '/' | url }}site.webmanifest" />
+    <link rel="author" type="text/plain" href="{{ '/' | url }}humans.txt" />
 
-    <link rel="alternate" type="application/json" href="{{ site.meta.url }}/feed.json" title="{{ site.meta.title }}" />
+    <link rel="alternate" type="application/json" href="{{ '/' | url }}feed.json" title="{{ site.meta.title }}" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
@@ -38,15 +38,15 @@
 
   </head>
 
-  <body class="bg-gray-900 text-gray-400 text-sm overflow-y-scroll overflow-x-hidden" style="background-image: url('/_assets/img/grunge.png'); display: none;" data-instant-intensity="mousedown">
-    <div class="app min-h-screen flex-(& col) bg-no-repeat bg-top" style="background-image: url('/_assets/img/retro-grid.jpg');">
+  <body class="bg-gray-900 text-gray-400 text-sm overflow-y-scroll overflow-x-hidden" style="background-image: url('{{ '/' | url }}_assets/img/grunge.png'); display: none;" data-instant-intensity="mousedown">
+    <div class="app min-h-screen flex-(& col) bg-no-repeat bg-top" style="background-image: url('{{ '/' | url }}_assets/img/retro-grid.jpg');">
 
       <header class="mb-32">
         <div class="mx-auto px-4 max-w-screen-xl relative">
           <nav class="w-full font-bold text-lg" aria-label="Main navigation">
             <ul class="pb-16 flex flex-wrap items-center justify-center lg:(pb-0 h-48 justify-between)">
               <li class="logo w-full text-center lg:(w-auto flex-1 order-3)">
-                <a href="/" class="inline-block transform motion-safe:(transition) hover:(-translate-y-[3px])"><img src="/_assets/img/logo.png" alt="{{ site.meta.title }}" /></a>
+                <a href="/" class="inline-block transform motion-safe:(transition) hover:(-translate-y-[3px])"><img src="{{ '/' | url }}_assets/img/logo.png" alt="{{ site.meta.title }}" /></a>
               </li>
               {%- for item in collections.all | eleventyNavigation %}
               <li class="mx-2 lg:(mx-0 w-48 order-{{ item.order }}{% if item.order > 2 %} text-end{% endif %})">
@@ -73,13 +73,13 @@
       <b class="pb-4 text-(gray-500 lg) font-semibold block lg:(text-xl)">{{ title }}</b>
       {%- endmacro %}
       {%- macro footerNav(title='',url='') %}
-      <li class="font-semibold"><a href="{{ url }}" class="motion-safe:(transition) hover:(text-gray-100)">{{ title }}</a></li>
+      <li class="font-semibold"><a href="{{ url | url }}" class="motion-safe:(transition) hover:(text-gray-100)">{{ title }}</a></li>
       {%- endmacro %}
 
       <footer class="py-32 px-4 w-full text-gray-600 flex-none relative lg:(px-0)">
         <div class="mx-auto px-4 max-w-screen-xl lg:(flex)">
           <div class="mb-8 flex-1 text-center lg:(mb-0 text-start)">
-            <a href="/" class="inline-block opacity-50 motion-safe:(transition) hover:(opacity-100)"><img src="/_assets/img/foot-logo.png" alt="{{ site.meta.title }}" class="inline-block" /></a>
+            <a href="/" class="inline-block opacity-50 motion-safe:(transition) hover:(opacity-100)"><img src="{{ '/' | url }}_assets/img/foot-logo.png" alt="{{ site.meta.title }}" class="inline-block" /></a>
           </div>
           <ul class="mb-0 flex justify-center text-base space-x-4 lg:(space-x-16)">
             <li>{{ footerNavHeading(title='Sitemap') }}
@@ -110,7 +110,7 @@
     </div>
 
     {% renderblock 'js' %}
-    <script src="/_assets/js/_app.js?v={% bust %}"></script>
+    <script src="{{ '/' | url }}_assets/js/_app.js?v={% bust %}"></script>
     <noscript>
       <style>body{display:block !important}*[style*="background-image"]{background-image: none!important;}</style>
     </noscript>

@@ -83,6 +83,6 @@ module.exports = function (eleventyConfig) {
       input: '_site',
       output: 'public',
     },
-    pathPrefix: '/openemu.org-11ty/',
+    pathPrefix: '/',
   };
 };

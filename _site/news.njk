@@ -37,13 +37,13 @@ eleventyComputed:
           </div>
           <article class="max-w-3xl space-y-5 md:(col-span-3)">
             <h2>
-              <a href="{{ item.url }}" class="group text-(gray-200 xl) leading-tight font-semibold block motion-safe:(transition) hover:(text-white)">
+              <a href="{{ item.url | url }}" class="group text-(gray-200 xl) leading-tight font-semibold block motion-safe:(transition) hover:(text-white)">
                 {{ item.data.title }}
                 {# <span class="bg-blue-500 absolute inset-y-7 -inset-x-2 rounded-lg opacity-0 transform scale-90 motion-safe:(transition) group-hover:(opacity-20 scale-100) md:(rounded-xl)"></span> #}
               </a>
             </h2>
             <p class="text-base line-clamp-3">{{ item.content | striptags(true) | escape }}</p>
-            <a href="{{ item.url }}" class="text-blue-500 flex items-center gap-1 motion-safe:(transition) hover:(text-white)">Read <iconify-icon icon="mdi:chevron-right" width="1em" height="1em" inline="false" class="iconify"></iconify-icon></a>
+            <a href="{{ item.url | url }}" class="text-blue-500 flex items-center gap-1 motion-safe:(transition) hover:(text-white)">Read <iconify-icon icon="mdi:chevron-right" width="1em" height="1em" inline="false" class="iconify"></iconify-icon></a>
           </article>
         </li>
       {% endfor %}
