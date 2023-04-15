@@ -2,14 +2,19 @@ backend:
   name: github
   repo: craigerskine/openemu.org-11ty
   branch: main
+
+media_folder: _site/_assets/img/news
+public_folder: /_assets/img/news
+
 collections:
   - label: "News"
     name: "news"
-    folder: "_site/news/{{year}}/{{day}}"
+    folder: "_site/news"
     format: "frontmatter"
+    slug: "{{year}}/{{day}}"
     create: true
     fields:
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Date", name: "date", widget: "date" }
-      - { label: "Poster image", name: "poster", widget: "string" }
+      - { label: "Date", name: "datetime", widget: "date", default: "YYYY-MM-DD", format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false }
+      - { label: "Poster image", name: "poster", widget: "string", required: false }
       - { label: "Body", name: "body", widget: "markdown", buttons: ["bold", "italic", "link", "quote", "bulleted-list", "numbered-list"] }
