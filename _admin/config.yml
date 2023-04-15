@@ -1,0 +1,15 @@
+backend:
+  name: github
+  repo: craigerskine/openemu.org-11ty
+  branch: main
+collections:
+  - label: "News"
+    name: "news"
+    folder: "_site/news/{{year}}/{{day}}"
+    format: "frontmatter"
+    create: true
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "date" }
+      - { label: "Poster image", name: "poster", widget: "image" }
+      - { label: "Body", name: "body", widget: "markdown", buttons: ["bold", "italic", "link", "quote", "bulleted-list", "numbered-list"], editor_components: ["image"] }
