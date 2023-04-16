@@ -29,9 +29,8 @@ All of the "data" is stored in `.yaml` files located in `./_site/_data/`. Simply
 ***
 ### :memo: Posting news
 
-- Create a `.md` file in `./_site/news/YYYY/MM/`
-  - `YYYY` = post year in 4 digit year format
-  - `MM` = post month in 2 digit month format
+- Create a `.md` file in `./_site/news/`
+  - File name form should be `YYYY-MM-slug`
 - Use fronmatter at the top of the file:
 ```md
 ---
