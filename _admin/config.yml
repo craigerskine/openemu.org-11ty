@@ -11,7 +11,7 @@ collections:
     name: "news"
     folder: "_site/news"
     format: "frontmatter"
-    slug: "{{year}}/{{day}}/{{slug}}"
+    slug: "{{year}}-{{day}}-{{slug}}"
     create: true
     fields:
       - { label: "Title", name: "title", widget: "string" }
