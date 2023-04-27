@@ -12,14 +12,14 @@ Site is built with [11ty](https://11ty.dev) and deploys to 100% static files via
 
 ***
 ### :floppy_disk: Local install
-- Make sure you have node.js installed on your local machine
+- Make sure you have [Node.js](https://nodejs.org) installed on your local machine
 - Clone this repo
 - Open the resulting folder in a terminal
 - `npm install`
 - `npm start`
-- Open the url that the terminal give you. Normally it's http://localhost:8080/ but it could be different if you have multiple sites running at once
+- Open the url displayed in the terminal results. Normally it's http://localhost:8080/ but it could be different if you have multiple sites running at once
 
-Now you can make changes and see the results before you commit said changes.
+Now you can make changes and see the results before you commit said changes. :smile:
 
 ***
 ### :pencil2: Updating
@@ -30,8 +30,8 @@ All of the "data" is stored in `.yaml` files located in `./_site/_data/`. Simply
 ### :memo: Posting news
 
 - Create a `.md` file in `./_site/news/`
-  - File name form should be `YYYY-MM-slug`
-- Use fronmatter at the top of the file:
+  - File name format should be `YYYY-MM-slug`
+- Use frontmatter at the top of the file:
 ```md
 ---
 title: My news post
@@ -42,19 +42,19 @@ date: YYYY-MM-DD
 Here's _my_ **amazing** news/blog post. {.text-center}
 ```
 - `title:` = Post title 
-- `poster:` = Optional image, remove this line if you don;t have an image
+- `poster:` = Optional image, remove this line if you don't have an image
 - `date:` = Required date field used to sort posts correctly, this must be in `YYYY-MM-DD` format
 
 Then just write your news/blog post in normal markdown. You can also use [markdown-it-attrs](https://github.com/arve0/markdown-it-attrs) to apply [Twind](https://twind.style) classes or other accessible attributes.
 
 ***
-### :speaking_head: Language voice
+### :speaking_head: Voice
 
-- News/Blog titles should be sentence case.
+- News/Blog titles should be sentence case
   - Don't Write Your Title Like This
   - Do write your title like this
-- Don't use a period at the end of your news/blog title.
-- If you need to use a heading, only use `## Heading title` for accessibility reasons.
+- Don't use a period at the end of your news/blog title
+- If you need to use a heading, only use `## Heading title` for accessibility reasons
 - More to come...
 
 ***
