@@ -55,16 +55,18 @@ install({
   ],
 });
 
-injectGlobal({
-  'html': { '@apply': 'bg-gray-900' },
-  'body': { '@apply': '!block' },
-  '.explode .controller-sms': { '@apply': '-left-[750px]' },
-  '.explode .controller-gb': { '@apply': '-left-[532px]' },
-  '.explode .controller-snes': { '@apply': '-right-[228px]' },
-  '.explode .controller-gba': { '@apply': '-right-[505px]' },
-  '.explode .controller-md': { '@apply': '-right-[764px]' },
-  '[x-cloak]': { '@apply': 'hidden', },
-});
+injectGlobal`
+  @layer base { 
+    html { @apply bg-gray-900; }
+    body { @apply !block; }
+    .explode .controller-sms { @apply -left-[750px]; }
+    .explode .controller-gb { @apply -left-[532px]; }
+    .explode .controller-snes { @apply -right-[228px]; }
+    .explode .controller-gba { @apply -right-[505px]; }
+    .explode .controller-md { @apply -right-[764px]; }
+    [x-cloak] { @apply hidden; }
+  }
+`
 
 // alpinejs
 import Alpine from 'alpinejs';
