@@ -27,7 +27,7 @@ layout: 'layouts/default.njk'
       </div>
     </div>
     <div class="py-3 md:(col-span-4)">
-      <div{% if prose %} class="prose prose-current prose-a:(text-blue-500 no-underline motion-safe:transition hover:text-blue-300) prose-hr:(border-current opacity-30) md:(ml-auto)"{% endif %}>
+      <div{% if prose %} class="prose prose-current prose-a:(text-blue-400 no-underline motion-safe:transition hover:text-white) prose-hr:(border-current opacity-30) md:(ml-auto)"{% endif %}>
         {{ content | safe }}
         {% if '/news/' in page.url %}
         <hr />

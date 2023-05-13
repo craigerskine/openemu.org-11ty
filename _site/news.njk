@@ -45,7 +45,7 @@ eleventyComputed:
               </a>
             </h2>
             <p class="text-base line-clamp-3">{{ item.content | striptags(true) | escape }}</p>
-            <a href="{{ item.url | url }}" class="text-blue-500 flex items-center gap-1 motion-safe:(transition) hover:(text-white)">Read <iconify-icon icon="mdi:chevron-right" width="1em" height="1em" inline="false" class="iconify"></iconify-icon></a>
+            <a href="{{ item.url | url }}" class="text-blue-400 flex items-center gap-1 motion-safe:(transition) hover:(text-white)">Read <iconify-icon icon="mdi:chevron-right" width="1em" height="1em" inline="false" class="iconify"></iconify-icon></a>
           </article>
         </li>
       {% endfor %}
