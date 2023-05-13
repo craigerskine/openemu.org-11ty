@@ -13,4 +13,4 @@ By popular demand we have implemented a news section to keep you all posted on w
 * Design processes
 * Other vide game emulation news
 
-So, get ready for some really cool articles and news updates. And if you are a real nerd you subscribe to these updates via a [JSON feed](/feed.json). {.text-sm}
+So, get ready for some really cool articles and news updates. And if you are a real nerd you can subscribe to these updates via a [JSON feed](/feed.json). {.text-sm}
