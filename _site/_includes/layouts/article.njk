@@ -6,10 +6,10 @@ layout: 'layouts/default.njk'
 
 {% call ui.section() %}
   {%- if poster %}
-    <figure class="mb-16">
+    <div class="mb-16">
       <img src="{{ poster }}" alt="{{ title }}" class="w-full shadow-img" />
-      <figcaption class="sr-only">{{ title }}</figcaption>
-    </figure>
+      <div class="sr-only">{{ title }}</div>
+    </div>
   {%- endif %}
   <article class="grid-(& cols-1) gap-12 md:(grid-cols-6)">
     <div class="md:(col-span-2) relative">

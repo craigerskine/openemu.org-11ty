@@ -97,10 +97,10 @@ eleventyNavigation:
       {%- for item in home.organized.list %}
         <li class="mx-auto lg:mx-0 max-w-[260px] space-y-6">
           <p class="btn-red w-12 h-12 text-xl pointer-events-none"><b class="m-auto font-semibold">{{ loop.index }}</b></p>
-          <figure class="space-y-6">
+          <div class="space-y-6">
             <img src="{{ '/' | url }}_assets/img/org-step{{ loop.index }}.jpg" alt="step {{ loop.index }}" class="shadow-img" />
-            <figcaption class="px-2 lg:(mb-0)">{{ item }}</figcaption>
-          </figure>
+            <div class="px-2 lg:(mb-0)">{{ item }}</div>
+          </div>
         </li>
       {%- endfor %}
     </ul>

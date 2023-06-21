@@ -23,10 +23,10 @@ eleventyComputed:
           <div class="text-gray-500">
             {%- if item.data.poster %}
             <a href="{{ item.url | url }}" class="mb-3 py-1 block opacity-70 motion-safe:(transition) hover:(opacity-100)">
-              <figure>
+              <div>
                 <img src="{{ item.data.poster }}" alt="{{ item.data.title }}" class="w-full shadow-img" />
-                <figcaption class="sr-only">{{ item.data.title }}</figcaption>
-              </figure>
+                <div class="sr-only">{{ item.data.title }}</div>
+              </div>
             </a>
             {%- else %}
             {# <div class="py-1">
