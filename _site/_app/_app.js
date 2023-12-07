@@ -39,7 +39,7 @@ install({
         },
       }),
       fontFamily: ({ theme }) => ({
-        sans: 'Inter,'+ theme('fontFamily.sans'),
+        sans: ['Inter', ...theme('fontFamily.sans')],
       }),
       boxShadow: {
         'btn': 'inset 0 1px 0 rgba(255,255,255,.33), inset 0 -1px 0 rgba(0,0,0,.33)',
