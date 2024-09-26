@@ -19,15 +19,13 @@ eleventyComputed:
   <div class="">
     <ul class="pt-8 divide-(y gray-500/30)">
       {% for item in pagination.items | reverse %}
-        <li class="py-8 relative md:(pr-5 grid-(& cols-4) items-start gap-12 items-baseline)">
+        <li class="group py-8 relative md:(pr-5 grid-(& cols-4) items-start gap-12 items-baseline)">
           <div class="text-gray-500">
             {%- if item.data.poster %}
-            <a href="{{ item.url | url }}" class="mb-3 py-1 block opacity-70 motion-safe:(transition) hover:(opacity-100)">
-              <div>
-                <img src="{{ item.data.poster }}" alt="{{ item.data.title }}" class="w-full shadow-img" />
-                <div class="sr-only">{{ item.data.title }}</div>
-              </div>
-            </a>
+            <figure class="mb-3 py-1 block opacity-70 motion-safe:(transition) hover:(opacity-100)">
+              <img src="{{ item.data.poster }}" alt="{{ item.data.title }}" class="w-full shadow-img motion-safe:(transition) group-hover:(ring-(& red-500/100) rounded-sm)" />
+              <figcaption class="sr-only">{{ item.data.title }}</figcaption>
+            </figure>
             {%- else %}
             {# <div class="py-1">
               <div class="bg-gray-900 flex aspect-video shadow-img">
@@ -38,14 +36,11 @@ eleventyComputed:
             <time class="py-1 mb-3 block" datetime="{{ item.data.date.toLocaleDateString('en-US', {month: '2-digit', day: '2-digit', year: 'numeric', timeZone: 'UTC'}) }}">{{ item.data.date.toLocaleDateString('en-US', {month: 'long', day: '2-digit', year: 'numeric', timeZone: 'UTC'}) }}</time>
           </div>
           <article class="max-w-3xl space-y-5 md:(col-span-3)">
-            <h2>
-              <a href="{{ item.url | url }}" class="group text-(gray-200 xl) leading-tight font-semibold block motion-safe:(transition) hover:(text-white)">
-                {{ item.data.title }}
-                {# <span class="bg-blue-500 absolute inset-y-7 -inset-x-2 rounded-lg opacity-0 transform scale-90 motion-safe:(transition) group-hover:(opacity-20 scale-100) md:(rounded-xl)"></span> #}
-              </a>
-            </h2>
+            <h2 class="text-(gray-200 xl) leading-tight font-semibold group-hover:(underline)">{{ item.data.title }}</h2>
             <p class="text-base line-clamp-3">{{ item.content | striptags(true) | escape }}</p>
-            <a href="{{ item.url | url }}" class="text-blue-400 flex items-center gap-1 motion-safe:(transition) hover:(text-white)">Read <iconify-icon icon="mdi:chevron-right" width="1em" height="1em" inline="false" class="iconify"></iconify-icon></a>
+            <a href="{{ item.url | url }}" class="text-red-500 inline-flex items-center gap-1 after:(content-[''] absolute inset-0) motion-safe:(transition) hover:(underline)">
+              Read <span class="sr-only">full article: {{ item.data.title }}</span> <iconify-icon icon="mdi:chevron-right" width="1em" height="1em" inline="false" class="iconify"></iconify-icon>
+            </a>
           </article>
         </li>
       {% endfor %}
