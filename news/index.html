@@ -83,23 +83,16 @@
   <div class="">
     <ul class="pt-8 divide-(y gray-500/30)">
       
-        <li class="py-8 relative md:(pr-5 grid-(& cols-4) items-start gap-12 items-baseline)">
+        <li class="group py-8 relative md:(pr-5 grid-(& cols-4) items-start gap-12 items-baseline)">
           <div class="text-gray-500">
-            <a href="/openemu.org-11ty/news/2023-04-welcome/" class="mb-3 py-1 block opacity-70 motion-safe:(transition) hover:(opacity-100)">
-              <div>
-                <img src="/openemu.org-11ty/_assets/img/news/placeholder.jpg" alt="Welcome to OpenEmu news" class="w-full shadow-img" />
-                <div class="sr-only">Welcome to OpenEmu news</div>
-              </div>
-            </a>
+            <figure class="mb-3 py-1 block opacity-70 motion-safe:(transition) hover:(opacity-100)">
+              <img src="/openemu.org-11ty/_assets/img/news/placeholder.jpg" alt="Welcome to OpenEmu news" class="w-full shadow-img motion-safe:(transition) group-hover:(ring-(& red-500/100) rounded-sm)" />
+              <figcaption class="sr-only">Welcome to OpenEmu news</figcaption>
+            </figure>
             <time class="py-1 mb-3 block" datetime="04/05/2023">April 05, 2023</time>
           </div>
           <article class="max-w-3xl space-y-5 md:(col-span-3)">
-            <h2>
-              <a href="/openemu.org-11ty/news/2023-04-welcome/" class="group text-(gray-200 xl) leading-tight font-semibold block motion-safe:(transition) hover:(text-white)">
-                Welcome to OpenEmu news
-                
-              </a>
-            </h2>
+            <h2 class="text-(gray-200 xl) leading-tight font-semibold group-hover:(underline)">Welcome to OpenEmu news</h2>
             <p class="text-base line-clamp-3">By popular demand we have implemented a news section to keep you all posted on what we are current working on and junk like that. Believe it or not, the original design specs accounted for this scenario so there was very little &#39;design&#39; work that had to be added. It was just a matter of building out the frontend.
 Plans for this section:
 
@@ -108,7 +101,9 @@ Design processes
 Other video game emulation news
 
 So, get ready for some really cool articles and news updates. And if you are a real nerd you can subscribe to these updates via a JSON feed.</p>
-            <a href="/openemu.org-11ty/news/2023-04-welcome/" class="text-blue-400 flex items-center gap-1 motion-safe:(transition) hover:(text-white)">Read <iconify-icon icon="mdi:chevron-right" width="1em" height="1em" inline="false" class="iconify"></iconify-icon></a>
+            <a href="/openemu.org-11ty/news/2023-04-welcome/" class="text-red-500 inline-flex items-center gap-1 after:(content-[''] absolute inset-0) motion-safe:(transition) hover:(underline)">
+              Read <span class="sr-only">full article: Welcome to OpenEmu news</span> <iconify-icon icon="mdi:chevron-right" width="1em" height="1em" inline="false" class="iconify"></iconify-icon>
+            </a>
           </article>
         </li>
       
@@ -118,6 +113,7 @@ So, get ready for some really cool articles and news updates. And if you are a r
 
     </div>
   </section>
+
         
   
   <b class="h-10 bg-(repeat-x bottom) absolute inset-x-0 bottom-0" style="background-image: url('/openemu.org-11ty/_assets/img/grunge-bot.png');" aria-hidden="true"></b>
@@ -169,7 +165,7 @@ So, get ready for some really cool articles and news updates. And if you are a r
     </div>
 
     
-    <script src="/openemu.org-11ty/_assets/js/_app.js?v=202472213"></script>
+    <script src="/openemu.org-11ty/_assets/js/_app.js?v=202482613"></script>
     <noscript>
       <style>body{display:block!important}*[style*="background-image"]{background-image: none!important;}</style>
     </noscript>
