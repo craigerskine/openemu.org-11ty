@@ -8,23 +8,24 @@ eleventyComputed:
     order: 5
 ---
 
-<ul class="grid-(& cols-1) gap-12 divide-(y gray-500/30) lg:(grid-cols-2 divide-y-0)">
+<ul class="mx-auto w-full max-w-md grid-(& cols-1) gap-24">
   {% for item in collections.vendors %}
-    <li class="{% if not loop.first %}pt-12 {% endif %}relative flex-(& col) items-start lg:(pt-0)">
-      <div class="w-full flex-(& row) gap-5 lg:(flex-col)">
-        <{%- if item.data.url %}a href="{{ item.data.url | url }}"{% else %}div{% endif %} class="btn-{{ item.data.color }} w-12 h-12 text-({{ item.data.color }}-300 2xl) flex-none{%- if not item.data.url %} pointer-events-none{% endif %} hover:(text-white)">
-          <iconify-icon icon="{{ item.data.ico }}" width="1em" height="1em" inline="false" class="iconify mauto"></iconify-icon>
-        </{%- if item.data.url %}a{% else %}div{% endif %}>
+    <li class="relative flex-(& col) items-start">
+      <div class="w-full flex-(& row) gap-5 relative">
+        <figure class="btn-{{ item.data.color }} w-12 h-12 text-({{ item.data.color }}-300 2xl) flex-none hover:(text-white)">
+          <iconify-icon icon="{{ item.data.ico }}" class="iconify m-auto"></iconify-icon>
+        </figure>
         <div class="flex-1">
           <strong class="text-(gray-300 base)">{{ item.data.title }}</strong>
           <div class="pt-1 leading-normal">{{ item.content | safe }}</div>
           <div class="pt-2 text-xl flex-(& wrap) items-center">
             {%- if item.data.url %}
-              <a href="{{ item.data.url | url }}" class="flex items-center gap-1">
-                <iconify-icon icon="mdi:link-variant" width="1em" height="1em" inline="false" class="iconify opacity-70"></iconify-icon>
+              <a href="{{ item.data.url | url }}" class="flex items-center">
+                <iconify-icon icon="mdi:link-variant" class="iconify opacity-70"></iconify-icon>
+                <span class="absolute inset-0 z-20" aria-hidden="true"></span>
               </a>
             {%- else %}
-              <iconify-icon icon="mdi:link-variant-off" width="1em" height="1em" inline="false" class="iconify opacity-30"></iconify-icon>
+              <iconify-icon icon="mdi:clipboard-outline" class="iconify opacity-30"></iconify-icon>
             {%- endif %}
           </div>
         </div>
