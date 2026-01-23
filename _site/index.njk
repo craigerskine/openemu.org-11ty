@@ -33,9 +33,9 @@ eleventyNavigation:
         </ul>
       </li>
     </ul>
-    <ul class="gallery intro-th mb-8 -ml-5 flex lg:(mb-0 flex-wrap)">
+    <ul class="gallery intro-th mb-8 flex justify-center gap-5 lg:(mb-0 flex-wrap justify-start)">
       <template x-for="(item, index) in gallery" hidden>
-        <li class="ml-5 relative lg:(mb-5 w-auto)">
+        <li class="relative lg:(w-auto)">
           <a href="#" @click.prevent="galleryActive = index" :class="['block motion-safe:(transition)', index == galleryActive ? 'opacity-100' : 'opacity-50']">
             <img :src="'{{ '/' | url }}_assets/img/' + item.th" alt="screenshot thumbnail" class="pointer-events-none shadow-img" />
             <template x-if="index == galleryActive">
