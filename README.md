@@ -24,12 +24,12 @@ Now you can make changes and see the results before you commit said changes. :sm
 ***
 ### :pencil2: Updating
 
-All of the "data" is stored in `.yaml` files located in `./_site/_data/`. Simply commit and push your changes to trigger a build and deploy.
+All of the "data" is stored in `.yaml` files located in `./_src/_data/`. Simply commit and push your changes to trigger a build and deploy.
 
 ***
 ### :memo: Posting news
 
-- Create a `.md` file in `./_site/news/`
+- Create a `.md` file in `./_src/news/`
   - File name format should be `YYYY-MM-slug`
 - Use frontmatter at the top of the file:
 ```md
