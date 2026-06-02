@@ -7,9 +7,6 @@
 
 Site is built with [11ty](https://11ty.dev) and deploys to 100% static files via GitHub pages.
 
-> DO NOT EDIT FILES IN THE `gh-pages` BRANCH!!!  
-> That branch gets auto generated/deployed when you push a commit in the main/master
-
 ***
 ### :floppy_disk: Local install
 - Make sure you have [Node.js](https://nodejs.org) installed on your local machine
