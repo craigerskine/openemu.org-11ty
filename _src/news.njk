@@ -1,5 +1,5 @@
 ---
-layout: 'layouts/default.njk'
+layout: layouts/default.njk
 title: News
 pagination:
   data: collections.news
@@ -12,10 +12,10 @@ eleventyComputed:
 
 {%- import "components/ui.njk" as ui -%}
 
-{% call ui.section() %}
-  {% call ui.heading() %}
+{%- call ui.section() %}
+  {%- call ui.heading() %}
     {{ title }}
-  {% endcall %}
+  {%- endcall %}
   <div class="">
     <ul class="pt-8 divide-(y gray-500/30)">
       {% for item in pagination.items | reverse %}
@@ -58,4 +58,4 @@ eleventyComputed:
       </ol>
     </nav>
   {% endif %}
-{% endcall %}
+{%- endcall %}

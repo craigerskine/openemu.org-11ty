@@ -1,6 +1,6 @@
 ---
 title: Cash App
-url: https://cash.me/$openemu
+url: https://cash.me/$nextemu
 ico: simple-icons:cashapp
 color: emerald
 date: 0001-01-01

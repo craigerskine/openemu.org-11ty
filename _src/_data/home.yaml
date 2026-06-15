@@ -1,6 +1,7 @@
----
-title: OpenEmu, changing the world of video game emulation... one console at a time.
-lead: For the first time, the 'It just works' philosophy now extends to open source video game emulation on the Mac. With OpenEmu, it is extremely easy to add, browse, organize and with a compatible gamepad, play those favorite games (ROMs) you already own.
+title: nextEmu, changing the world of video game emulation... one console at a time.
+
+lead: For the first time, the 'It just works' philosophy now extends to open source video game emulation on the Mac. With nextEmu, it is extremely easy to add, browse, organize and with a compatible gamepad, play those favorite games (ROMs) you already own.
+
 gallery:
   - th: intro-th1.jpg
     main: intro-nes-grid.png
@@ -14,35 +15,38 @@ gallery:
     main: intro-saves.png
   - th: intro-th6.jpg
     main: intro-list.png
+
 prefs:
   title: Take Control
   lead: Up, Up, Down, Down, Left, Right, Left, Right, B, A, Start
-  body: |-
-    Why restrict yourself to just the keyboard? Although it is not a requirement, OpenEmu is best used with a peripheral gamepad or controller to interact with your games.
-    <br /><br />
+  body: |
+    Why restrict yourself to just the keyboard? Although it is not a requirement, nextEmu is best used with a peripheral gamepad or controller to interact with your games.
+
     Via the Controller Preferences, simply auto-magically assign buttons with any generic HID compliant USB or Bluetooth game controller.
-    <br /><br />
+
     Plug in your gamepad, select it from the list... and press start to begin your adventures!
   action: Learn More
-  url: https://github.com/OpenEmu/OpenEmu/wiki#supported-controllers
+  url: https://github.com/nickybmon/OpenEmu-Silicon/wiki#supported-controllers
+
 organized:
   title: Time To Get Organized
   lead: Everything in its place. Automatically
   body: We combine some of the best emulation projects together into one beautiful unified application that simply organizes your personal games library. Watch as you drop in backups of your games (ROMs) & they are gracefully added to their appropriate library along with original box art!
   list:
     - Drag n' Drop a backup game (ROM) from your Mac desktop.
-    - OpenEmu 'scans' your game and begins the organization process.
+    - nextEmu 'scans' your game and begins the organization process.
     - Your game is now neatly organized and you are ready to start playing!
+
 features:
   title: Features Overview
   lead: An exciting world of video games is within your grasp.
   section:
     - title: Library
-      lead: One of the standout features of OpenEmu is how it organizes all your games into one unique, unified games library. Watch as backups of the games (ROMs) you already own are gracefully added to their appropriate library and box art is magically added. You can even create your own ‘collections’ mix and matched from different consoles.
+      lead: One of the standout features of nextEmu is how it organizes all your games into one unique, unified games library. Watch as backups of the games (ROMs) you already own are gracefully added to their appropriate library and box art is magically added. You can even create your own ‘collections’ mix and matched from different consoles.
       img: book
       col: 1
     - title: Controls & Controllers
-      lead: Any generic HID compliant USB or Bluetooth game controller should work with OpenEmu out of the box. OpenEmu now automatically maps controls for the following recognized devices in our database...
+      lead: Any generic HID compliant USB or Bluetooth game controller should work with nextEmu out of the box. nextEmu now automatically maps controls for the following recognized devices in our database...
       img: controls
       col: 1
       list:
@@ -61,7 +65,7 @@ features:
         - title: Gravis GamePad Pro
         - title: N64 Adaptoid
     - title: Cores & Systems
-      lead: OpenEmu is modular, and thanks to the work of other great open source projects, it can emulate a wide variety of video game systems (we call them 'cores'). OpenEmu emulates the following systems...
+      lead: nextEmu is modular, and thanks to the work of other great open source projects, it can emulate a wide variety of video game systems (we call them 'cores'). nextEmu emulates the following systems...
       img: chip
       col: 2
       list:

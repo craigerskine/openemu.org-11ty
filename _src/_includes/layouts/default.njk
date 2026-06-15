@@ -82,7 +82,7 @@
             <a href="{{ '/' | url }}" class="inline-block opacity-50 motion-safe:(transition) hover:(opacity-100)"><img src="{{ '/' | url }}_assets/img/foot-logo.png" alt="{{ site.meta.title }}" class="inline-block" /></a>
           </div>
           <ul class="mb-0 flex justify-center text-base space-x-4 lg:(space-x-16)">
-            <li>{{ footerNavHeading(title='Sitemap') }}
+            {#- <li>{{ footerNavHeading(title='Sitemap') }}
               <ul class="lg:(space-y-3)">
                 {%- for item in collections.all | eleventyNavigation %}
                 {{ footerNav(title=item.title,url=item.url) }}
@@ -95,7 +95,7 @@
                   {{ footerNav(title=item.title,url=item.url) }}
                 {%- endfor %}
               </ul>
-            </li>
+            </li> -#}
             <li>{{ footerNavHeading(title='Social') }}
               <ul class="lg:(space-y-3)">
                 {%- for item in site.social %}

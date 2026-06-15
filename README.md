@@ -1,4 +1,4 @@
-# openemu.github.io | openemu.org
+# [nextEmu](https://nextemu.com)
 
 - [x] [11ty](https://11ty.dev)
 - [x] [Twind](https://twind.style)

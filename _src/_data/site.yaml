@@ -1,14 +1,10 @@
----
 meta:
-  title: OpenEmu - Multiple Video Game System
+  title: nextEmu - Multiple Video Game System
   description: Console and Arcade video game emulator for macOS
-  url: https://craigerskine.github.io/openemu.org-11ty
+  url: https://nextemu.com
   author: Craig Erskine
+
 social:
-  - title: Twitter
-    ico: mdi:twitter
-    url: https://twitter.com/openemu
-analytics: |-
-  // google analytics
-  window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
-  ga('create', 'UA-XXXXXXX-X', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
+  - title: X
+    ico: simple-icons:x
+    url: https://x.com/nextemu

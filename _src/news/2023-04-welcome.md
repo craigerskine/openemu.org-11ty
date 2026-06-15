@@ -1,5 +1,5 @@
 ---
-title: Welcome to OpenEmu news
+title: Welcome to nextEmu news
 eleventyComputed:
   poster: "{{ '/' | url }}_assets/img/news/placeholder.jpg"
 date: 2023-04-05
